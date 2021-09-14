@@ -1,0 +1,12 @@
+<div class="dropdown-div mt-3">
+    <button [ngClass]="{ 'dropdown-lang-width': cssWidth === true }" class="btn select ts-dropdown-fluent-toggle" type="button" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="pl-0 float-left">
+        <span class="language-text-pos-1">{{selectedValue}}</span>
+      </div>
+    </button>
+    <ul class="dropdown-menu mt-1cccc">
+        <li (click)="dropdownSelection(option.value, option.label)" *ngFor="let option of optionArray">
+            {{option.label}}
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,149 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "teams-ui-angular": {
+            "projectType": "library",
+            "root": "projects/teams-ui-angular",
+            "sourceRoot": "projects/teams-ui-angular/src",
+            "prefix": "teams",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "project": "projects/teams-ui-angular/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/teams-ui-angular/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/teams-ui-angular/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/teams-ui-angular/src/test.ts",
+                        "tsConfig": "projects/teams-ui-angular/tsconfig.spec.json",
+                        "karmaConfig": "projects/teams-ui-angular/karma.conf.js"
+                    }
+                }
+            }
+        },
+        "teams-test": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                },
+                "@schematics/angular:application": {
+                    "strict": true
+                }
+            },
+            "root": "projects/teams-test",
+            "sourceRoot": "projects/teams-test/src",
+            "prefix": "app",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/teams-test",
+                        "index": "projects/teams-test/src/index.html",
+                        "main": "projects/teams-test/src/main.ts",
+                        "polyfills": "projects/teams-test/src/polyfills.ts",
+                        "tsConfig": "projects/teams-test/tsconfig.app.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "projects/teams-test/src/favicon.ico",
+                            "projects/teams-test/src/assets"
+                        ],
+                        "styles": [
+                            "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                            "projects/teams-test/src/styles.scss",
+                            "dist/teams-ui-angular/style/style.scss"
+                        ],
+                        "scripts": [
+                            "node_modules/jquery/dist/jquery.min.js",
+                            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+                        ]
+                    },
+                    "configurations": {
+                        "production": {
+                            "budgets": [{
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "1mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "fileReplacements": [{
+                                "replace": "projects/teams-test/src/environments/environment.ts",
+                                "with": "projects/teams-test/src/environments/environment.prod.ts"
+                            }],
+                            "outputHashing": "all"
+                        },
+                        "development": {
+                            "buildOptimizer": false,
+                            "optimization": false,
+                            "vendorChunk": true,
+                            "extractLicenses": false,
+                            "sourceMap": true,
+                            "namedChunks": true
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "teams-test:build:production"
+                        },
+                        "development": {
+                            "browserTarget": "teams-test:build:development"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "teams-test:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/teams-test/src/test.ts",
+                        "polyfills": "projects/teams-test/src/polyfills.ts",
+                        "tsConfig": "projects/teams-test/tsconfig.spec.json",
+                        "karmaConfig": "projects/teams-test/karma.conf.js",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "projects/teams-test/src/favicon.ico",
+                            "projects/teams-test/src/assets"
+                        ],
+                        "styles": [
+                            "projects/teams-test/src/styles.scss"
+                        ],
+                        "scripts": []
+                    }
+                }
+            }
+        }
+    },
+    "defaultProject": "teams-ui-angular"
+}
