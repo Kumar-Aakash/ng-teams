@@ -1,0 +1,12 @@
+<div id="radio-div" class="ms-fontColor-themePrimary mt-3 ml-3">
+    <span class="ms-font-l">{{title}}</span>
+    <div class="mt-2" *ngFor="let option of radio_options">
+        <input [id]="option.value" type="radio" aria-label="radio button" aria-checked="false" class="ts-radio-fluent"
+            (change)="onValueChange(option?.value)" [value]="option.value" [checked]="option.value == selectedValue">
+        <label [for]="option.value" class="ms-font-l ts-radio-fluent-text ml-3">
+            {{option?.label}}
+        </label>
+    </div>
+</div>
+<!-- [value]="isChecked" -->
+<!-- data-ktp-execute-target="true" -->

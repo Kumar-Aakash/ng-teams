@@ -1,0 +1,7 @@
+<div class="ms-textAlignCenter ms-MessageBar" role="alert" [ngClass]="{'ms-MessageBar--success': type == 'success',
+     'ms-MessageBar--error': type == 'error', 'ms-MessageBar--info': type == 'info'}">
+    {{alert_message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeAlert()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>

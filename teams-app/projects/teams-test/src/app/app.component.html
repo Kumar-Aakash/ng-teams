@@ -1,5 +1,21 @@
 <teams-button title="Dynamic Text" (buttonClick)="test($event)" [disabled]="true">
 </teams-button>
 
-<teams-single-select [optionArray]="arr" [selectedValue]="selectedLanguage" (selectedValueEmit)="onDropdownSelection($event)">
+<teams-single-select [optionArray]="arr" [selectedValue]="selectedLanguage"
+    (selectedValueEmit)="onDropdownSelection($event)">
 </teams-single-select>
+
+<teams-checkbox [cb_label]="cb_label" [isChecked]="isChecked" (onChange)="onCheckChange($event)"></teams-checkbox>
+
+<teams-radio [title]="cb_title" [radio_options]="arr" [selectedValue]="isChecked1" (onChange)="onRadioChange($event)">
+</teams-radio>
+
+<teams-loader *ngIf="isLoading"></teams-loader>
+
+<teams-toggle [cb_label]="cb_label" [isChecked]="isChecked" (onChange)="onCheckChange($event)"></teams-toggle>
+
+<teams-alert *ngIf="alertMessage !== '' " [type]='alertType' [alert_message]="alertMessage" (alertClose)="closeAlert()">
+</teams-alert>
+
+<teams-confirm-dialog [message]="alertMessage" [showDialog]="showDialog" [intervalValue]="dialogInterval"
+    (resultResponse)="dialogResponse($event)"> </teams-confirm-dialog>

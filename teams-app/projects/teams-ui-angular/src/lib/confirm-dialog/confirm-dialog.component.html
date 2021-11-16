@@ -1,0 +1,31 @@
+<div class="ngdialog ts-modal-dialog custom-width ts-confirm-modal-dialog" *ngIf="showDialog">
+    <div class="ngdialog-overlay"></div>
+    <div class="ngdialog-content">
+        <div class="ts-confirm-modal">
+            <div class="analytics-panel">
+                <div class="ts-modal-dialog-header">
+                    <h4 class="app-font-family-base ts-modal-dialog-title" style="outline: 0px;">
+                        Confirmation
+                    </h4>
+                    <i class="ms-Icon ms-Icon--ChromeClose" title="ChromeClose" aria-hidden="true"
+                        (click)="dialogeNo()"></i>
+                </div>
+                <div class="ts-modal-dialog-content">
+                    <div class="ts-confirm-dialog-description">{{message}}</div>
+                </div>
+                <div class="ts-modal-dialog-footer">
+                    <div class="ts-modal-dialog-footer-buttons">
+                        <div class="ts-modal-button-div">
+                            <button
+                                class="ts-btn ts-btn-fluent ts-btn-fluent-white  button-height-1 ts-btn-width-default"
+                                (click)="dialogeNo()">No</button>
+                            <button
+                                class="ts-btn ts-btn-fluent-primary ts-btn-fluent button-height-1 ts-btn-width-default"
+                                (click)="dialogeYes()">Yes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

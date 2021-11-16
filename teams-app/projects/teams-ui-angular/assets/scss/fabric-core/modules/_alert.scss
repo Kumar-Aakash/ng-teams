@@ -4,6 +4,7 @@
     border: 1px solid !important;
     @extend %theme-error-border-color;
     z-index: 1001 !important;
+    box-shadow: 5px 5px 10px -1px $ms-color-red;
 }
 
 .ms-MessageBar.ms-MessageBar--success {
@@ -12,6 +13,23 @@
     border: 1px solid !important;
     @extend %theme-green-border-color;
     z-index: 1001 !important;
+    box-shadow: 5px 5px 10px -1px $ms-color-greenLight;
+}
+
+.ms-MessageBar.ms-MessageBar--info {
+    background-color: $ms-color-blueLight;
+    border: 1px solid $ms-color-blue !important;
+    z-index: 1001 !important;
+    box-shadow: 5px 5px 10px -1px $ms-color-blueLight;
+}
+
+.ms-MessageBar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 0.5rem 1rem;
 }
 
 .ms-MessageBar .ms-Icon--ChromeClose {

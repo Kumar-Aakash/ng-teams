@@ -2,18 +2,34 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ButtonComponent } from './button/button.component';
 import { SingleSelectComponent } from './single-select/single-select.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
+import { RadioComponent } from './radio/radio.component';
+import { ToggleComponent } from './toggle/toggle.component';
+import { AlertComponent } from './alert/alert.component';
+import { LoaderComponent } from './loader/loader.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
     ButtonComponent,
-    SingleSelectComponent
+    SingleSelectComponent,
+    CheckboxComponent,
+    RadioComponent,
+    ToggleComponent,
+    AlertComponent,
+    LoaderComponent,
+    ConfirmDialogComponent,
   ],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   exports: [
     ButtonComponent,
-    SingleSelectComponent
-  ]
+    SingleSelectComponent,
+    CheckboxComponent,
+    RadioComponent,
+    ToggleComponent,
+    AlertComponent,
+    LoaderComponent,
+    ConfirmDialogComponent,
+  ],
 })
-export class TeamsUiAngularModule { }
+export class TeamsUiAngularModule {}

@@ -1,0 +1,5 @@
+<div class="ms-fontColor-themePrimary mt-4">
+    <input type="checkbox" id="toggle" aria-label="toggle" aria-checked="false" class="ts-toggle-fluent"
+        [checked]="isChecked == 'true'? true : false" #toggle (change)="onValueChange(toggle.checked)">
+    <label for="toggle" class="ms-font-l ts-toggle-fluent-text ml-3">{{cb_label}}</label>
+</div>
