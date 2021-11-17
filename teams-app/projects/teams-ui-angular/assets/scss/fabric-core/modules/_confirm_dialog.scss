@@ -35,7 +35,7 @@
 }
 
 .ts-modal-dialog.ngdialog .ngdialog-content {
-    box-shadow: 0 1.6rem 1.8rem -0.4rem rgba(0, 0, 0, 0.10);
+    box-shadow: 0 1.6rem 1.8rem -0.4rem rgba(0, 0, 0, 0.1);
     background: 0;
     margin: auto;
     padding: 0;
@@ -48,7 +48,7 @@
     border-radius: 0 0 0.3rem 0.3rem;
     color: $ms-color-gray180;
     margin-top: -0.1rem;
-    padding: 1.6rem 3.2rem 3.2rem;
+    padding: 2rem;
     flex: 0 0 auto;
     position: relative;
 }
@@ -79,7 +79,7 @@
 .ts-modal-dialog-footer-buttons {
     .ts-btn {
         font: normal normal 500 14px/20px Segoe UI !important;
-        height: 3rem;
+        padding: 0.5rem;
     }
     button {
         margin-left: 10px;

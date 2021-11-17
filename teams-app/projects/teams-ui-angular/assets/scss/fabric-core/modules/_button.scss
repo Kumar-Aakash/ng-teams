@@ -1,7 +1,6 @@
 button:focus {
     outline: none !important;
 }
-
 .ts-btn-fluent-primary {
     @extend %theme-link-background-color;
     border: 0;
@@ -73,11 +72,16 @@ button:focus {
     min-width: 4.5rem;
 }
 
-.button-height-1 {
+.button-height-2 {
+    height: 2rem;
+}
+
+.button-height-3 {
     height: 3rem;
 }
 
-.button-disabled {
+.button-disabled,
+button:disabled {
     background-color: $ms-color-grey5 !important;
     color: $ms-color-grey55;
 }

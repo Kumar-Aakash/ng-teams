@@ -59,6 +59,11 @@
         box-shadow: none;
         background: $ms-color-gray10;
     }
+    // Disabled and checked box.
+    &:disabled:checked + label:before {
+        box-shadow: none;
+        background: $ms-color-gray70;
+    }
     // Checkmark. Could be replaced with an image
     &:checked + label:after {
         content: "";

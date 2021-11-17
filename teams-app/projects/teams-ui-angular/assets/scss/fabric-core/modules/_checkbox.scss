@@ -22,6 +22,7 @@
         height: 20px;
         background: $ms-color-white;
         border: 1px solid $ms-color-gray70 !important;
+        border-radius: 3px;
         top: 0px;
         position: relative;
         float: left;
@@ -47,6 +48,11 @@
     &:disabled + label:before {
         box-shadow: none;
         background: $ms-color-gray10;
+    }
+    // Disabled and checked box.
+    &:disabled:checked + label:before {
+        box-shadow: none;
+        background: $ms-color-gray70;
     }
     // Checkmark. Could be replaced with an image
     &:checked + label:after {

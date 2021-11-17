@@ -6,14 +6,14 @@
     cursor: pointer;
     position: absolute;
     opacity: 0;
-    &+label {
+    & + label {
         position: relative;
         cursor: pointer;
         padding: 0;
         width: 100%;
     }
     // Box.
-    &+label:before {
+    & + label:before {
         content: "";
         margin-right: 10px;
         display: inline-block;
@@ -28,29 +28,34 @@
         float: left;
     }
     // Box hover
-    &:hover+label:before {
+    &:hover + label:before {
         background: $ms-color-white;
     }
     // Box focus
-    &:active+label:before {
+    &:active + label:before {
         box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
     }
     // Box checked
-    &:checked+label:before {
+    &:checked + label:before {
         @extend %theme-link-background-color;
     }
     // Disabled state label.
-    &:disabled+label {
+    &:disabled + label {
         color: $ms-color-gray70;
         cursor: auto;
     }
     // Disabled box.
-    &:disabled+label:before {
+    &:disabled + label:before {
         box-shadow: none;
         background: $ms-color-gray10;
     }
+    // Disabled and checked box.
+    &:disabled:checked + label:before {
+        box-shadow: none;
+        background: $ms-color-gray70;
+    }
     // Checkmark. Could be replaced with an image
-    &:checked+label:after {
+    &:checked + label:after {
         content: "";
         position: absolute;
         left: 5px;
@@ -58,39 +63,40 @@
         background: $ms-color-white;
         width: 2px;
         height: 2px;
-        box-shadow: 2px 0 0 $ms-color-white, 4px 0 0 $ms-color-white, 4px -2px 0 $ms-color-white, 4px -4px 0 $ms-color-white, 4px -6px 0 $ms-color-white, 4px -8px 0 $ms-color-white;
+        box-shadow: 2px 0 0 $ms-color-white, 4px 0 0 $ms-color-white, 4px -2px 0 $ms-color-white,
+            4px -4px 0 $ms-color-white, 4px -6px 0 $ms-color-white, 4px -8px 0 $ms-color-white;
         transform: rotate(45deg);
     }
 }
 
 .ts-radio-fluent-success {
-    &+label:before {
+    & + label:before {
         background-color: $ms-color-white !important;
         @extend %theme-green-border-color-10;
     }
-    &+label {
+    & + label {
         @extend %theme-green-color-10;
     }
 }
 
 .ts-radio-fluent-failure {
-    &+label:before {
+    & + label:before {
         background-color: $ms-color-white !important;
         @extend %theme-error-border-color;
     }
-    &+label {
+    & + label {
         text-decoration: line-through;
         @extend %theme-error-color;
     }
 }
 
 .ts-radio-fluent-primary {
-    &+label:before {
+    & + label:before {
         background-color: $ms-color-white !important;
     }
 }
 
-.ts-radio-fluent+label .ts-radio-fluent-text {
+.ts-radio-fluent + label .ts-radio-fluent-text {
     display: inline-block;
     width: calc(100% - 40px);
     text-decoration: inherit;

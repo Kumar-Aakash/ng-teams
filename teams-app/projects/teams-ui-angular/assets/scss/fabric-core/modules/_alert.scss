@@ -1,26 +1,39 @@
+.ms-MessageBar {
+    border: 1px solid !important;
+    z-index: 1001 !important;
+}
 .ms-MessageBar.ms-MessageBar--error {
     @extend %theme-background-color-light-danger;
     @extend %theme-error-color;
-    border: 1px solid !important;
     @extend %theme-error-border-color;
-    z-index: 1001 !important;
-    box-shadow: 5px 5px 10px -1px $ms-color-red;
+    // background-color: $ms-alert-error-bg;
+    // color: $ms-alert-error !important;
+    // border-color: $ms-alert-error !important;
+    box-shadow: 5px 5px 10px -1px $ms-alert-error-bg;
 }
 
 .ms-MessageBar.ms-MessageBar--success {
     @extend %theme-green-alert-background-color;
     @extend %theme-green-alert-color;
-    border: 1px solid !important;
     @extend %theme-green-border-color;
-    z-index: 1001 !important;
-    box-shadow: 5px 5px 10px -1px $ms-color-greenLight;
+    // background-color: $ms-alert-success-bg;
+    // color: $ms-alert-success !important;
+    // border-color: $ms-alert-success !important;
+    box-shadow: 5px 5px 10px -1px $ms-alert-success-bg;
 }
 
 .ms-MessageBar.ms-MessageBar--info {
-    background-color: $ms-color-blueLight;
-    border: 1px solid $ms-color-blue !important;
-    z-index: 1001 !important;
-    box-shadow: 5px 5px 10px -1px $ms-color-blueLight;
+    background-color: $ms-alert-info-bg;
+    color: $ms-alert-info !important;
+    border-color: $ms-alert-info !important;
+    box-shadow: 5px 5px 10px -1px $ms-alert-info-bg;
+}
+
+.ms-MessageBar.ms-MessageBar--warning {
+    background-color: $ms-alert-warning-bg;
+    color: $ms-alert-warning !important;
+    border-color: $ms-alert-warning !important;
+    box-shadow: 5px 5px 10px -1px $ms-alert-warning-bg;
 }
 
 .ms-MessageBar {
@@ -35,4 +48,17 @@
 .ms-MessageBar .ms-Icon--ChromeClose {
     float: right;
     font-size: 11px;
+}
+
+.info {
+    color: $ms-alert-info;
+}
+.success {
+    @extend %theme-green-alert-color;
+}
+.error {
+    @extend %theme-error-color;
+}
+.warning {
+    color: $ms-alert-warning;
 }
