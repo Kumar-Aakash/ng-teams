@@ -1,6 +1,12 @@
 .ms-MessageBar {
     border: 1px solid !important;
     z-index: 1001 !important;
+    .svg-icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+        overflow: hidden;
+    }
 }
 .ms-MessageBar.ms-MessageBar--error {
     @extend %theme-background-color-light-danger;
@@ -45,20 +51,33 @@
     padding: 0.5rem 1rem;
 }
 
-.ms-MessageBar .ms-Icon--ChromeClose {
-    float: right;
-    font-size: 11px;
+.ms-MessageBar .close {
+    &:hover {
+        color: inherit;
+    }
 }
 
 .info {
     color: $ms-alert-info;
+    .svg-icon path {
+        fill: $ms-alert-info;
+    }
 }
 .success {
     @extend %theme-green-alert-color;
+    .svg-icon path {
+        fill: $ms-alert-success;
+    }
 }
 .error {
     @extend %theme-error-color;
+    .svg-icon path {
+        fill: $ms-alert-error;
+    }
 }
 .warning {
     color: $ms-alert-warning;
+    .svg-icon path {
+        fill: $ms-alert-warning;
+    }
 }

@@ -1,0 +1,30 @@
+$ms-progress-bar-height: 3px;
+
+.ts-progress {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 100%;
+    @extend %theme-body-bg-background-color;
+
+    .ts-progress-label {
+        padding: 1rem;
+    }
+    .ts-progress-bar {
+        margin: 0 1rem;
+        height: $ms-progress-bar-height;
+        background-color: $ms-color-gray40;
+        max-width: 95%;
+    }
+    .ts-progress-complete {
+        // background-color: $ms-color-blue;
+        height: $ms-progress-bar-height;
+        margin: 0 1rem;
+        max-width: 95%;
+        margin-top: -$ms-progress-bar-height;
+        @extend %theme-link-background-color;
+    }
+    .ts-progress-description {
+        padding: 1rem;
+    }
+}

@@ -8,6 +8,8 @@ import { ToggleComponent } from './toggle/toggle.component';
 import { AlertComponent } from './alert/alert.component';
 import { LoaderComponent } from './loader/loader.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { TabsPanelComponent } from './tabs-panel/tabs-panel.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     AlertComponent,
     LoaderComponent,
     ConfirmDialogComponent,
+    ProgressBarComponent,
+    TabsPanelComponent,
   ],
   imports: [CommonModule],
   exports: [
@@ -30,6 +34,8 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     AlertComponent,
     LoaderComponent,
     ConfirmDialogComponent,
+    ProgressBarComponent,
+    TabsPanelComponent,
   ],
 })
 export class TeamsUiAngularModule {}

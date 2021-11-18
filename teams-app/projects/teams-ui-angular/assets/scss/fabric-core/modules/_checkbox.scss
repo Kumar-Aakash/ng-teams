@@ -38,6 +38,12 @@
     // Box checked
     &:checked + label:before {
         @extend %theme-link-background-color;
+        &:hover {
+            @extend %theme-link-hover-background-color;
+        }
+        &:active {
+            @extend %theme-link-focus-background-color;
+        }
     }
     // Disabled state label.
     &:disabled + label {

@@ -14,7 +14,7 @@ import {
   encapsulation: ViewEncapsulation.None,
 })
 export class CheckboxComponent implements OnInit {
-  @Input() cb_label: string = '';
+  @Input() label: string = '';
   @Input() isChecked: 'true' | 'false' = 'false';
   @Output() onChange = new EventEmitter();
   constructor() {}

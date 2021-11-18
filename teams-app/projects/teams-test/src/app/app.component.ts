@@ -17,11 +17,10 @@ export class AppComponent {
       label: 'Español',
     },
   ];
-  cb_label: string = 'Microsoft Checkbox';
+  label: string = 'Microsoft Checkbox';
   isChecked: 'true' | 'false' = 'false';
-  cb_title: string = 'Microsoft Radio Button';
   isChecked1: string = 'es';
-  alertType: string = 'success';
+  alertType: string = 'error';
   alertMessage: string = 'Project is running';
   showDialog: boolean = false;
   dialogInterval: number = 2000;
@@ -30,8 +29,14 @@ export class AppComponent {
     { name: 'Menu 1', id: 'Menu 1' },
     { name: 'Menu 2', id: 'Menu 2' },
   ];
+  public tabsList = [
+    { id: '#labGuide', title: 'Lab Guide' },
+    { id: '#vm', title: 'virtual Machine' },
+    { id: '#envDetails', title: 'Environment Details' },
+  ];
   selectedLanguage: any;
   isLoading: boolean = true;
+  progressCompleted: number = 0;
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('theme-default');
     // this.document.body.classList.add('theme-blue');
@@ -53,7 +58,7 @@ export class AppComponent {
   }
   public onCheckChange(val: any) {
     this.isChecked = val;
-    this.cb_label = `Current Value is ${val}`;
+    this.label = `Current Value is ${val}`;
   }
   public onRadioChange(val: any) {
     this.isChecked1 = val;
@@ -62,6 +67,17 @@ export class AppComponent {
     this.alertMessage = '';
   }
   public dialogResponse(response: any) {
+    this.showDialog = false;
     console.log(response);
+    let barProgress = setInterval(() => {
+      if (this.progressCompleted == 100) {
+        clearInterval(barProgress);
+      } else {
+        this.progressCompleted = this.progressCompleted + 10;
+      }
+    }, 1000);
+  }
+  onSelectTab(tab: string) {
+    console.log(tab);
   }
 }

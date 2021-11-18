@@ -1,0 +1,7 @@
+<div class="ts-tabs-panel">
+    <ul class="ts-tabs-list">
+        <li (click)="onSelectTab(tab.id)" role="button" *ngFor="let tab of tabs" class="ts-tab-item">
+            <span class="tab-title">{{tab.title}}</span>
+        </li>
+    </ul>
+</div>

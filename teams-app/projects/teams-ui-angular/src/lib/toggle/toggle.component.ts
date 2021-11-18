@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./toggle.component.scss'],
 })
 export class ToggleComponent implements OnInit {
-  @Input() cb_label: string = '';
+  @Input() label: string = '';
   @Input() isChecked: 'true' | 'false' = 'false';
   @Output() onChange = new EventEmitter();
   constructor() {}

@@ -12,3 +12,5 @@ export * from './lib/toggle/toggle.component';
 export * from './lib/alert/alert.component';
 export * from './lib/loader/loader.component';
 export * from './lib/confirm-dialog/confirm-dialog.component';
+export * from './lib/progress-bar/progress-bar.component';
+export * from './lib/tabs-panel/tabs-panel.component';

@@ -1,0 +1,19 @@
+.ts-tabs-panel {
+    @extend %theme-body-bg-background-color;
+    margin: 0.5rem;
+    .ts-tabs-list {
+        display: flex;
+        list-style-type: none;
+        .ts-tab-item {
+            padding: 0.5rem;
+            background-color: $ms-color-gray40;
+            &:hover {
+                // background-color: $ms-color-gray40;
+                @extend %theme-link-background-color;
+            }
+            &:active {
+                background-color: $ms-color-communicationPrimary;
+            }
+        }
+    }
+}

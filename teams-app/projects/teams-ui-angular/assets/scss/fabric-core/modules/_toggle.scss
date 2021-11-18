@@ -24,8 +24,8 @@
         border: 1px solid $ms-color-gray70 !important;
         top: 0px;
         position: relative;
-        float: left;
         border-radius: 12px;
+        float: left;
     }
     & + label:after {
         content: "";
@@ -48,6 +48,12 @@
     // Box checked
     &:checked + label:before {
         @extend %theme-link-background-color;
+        &:hover {
+            @extend %theme-link-hover-background-color;
+        }
+        &:active {
+            @extend %theme-link-focus-background-color;
+        }
     }
     // Disabled state label.
     &:disabled + label {

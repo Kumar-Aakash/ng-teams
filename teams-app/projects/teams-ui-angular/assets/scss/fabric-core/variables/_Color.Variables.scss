@@ -81,14 +81,14 @@ $ms-color-sharedGray20: #69797e !default;
 $ms-color-sharedGray10: #a0aeb2 !default;
 $ms-color-lightGrey: #dddd !default;
 //alert
-$ms-alert-error: #f3d6d8;
-$ms-alert-error-bg: #fcf4f6;
-$ms-alert-info: #c8c8c8;
-$ms-alert-info-bg: #e1e1e1;
-$ms-alert-success: #b7dc87;
-$ms-alert-success-bg: #e7f2da;
-$ms-alert-warning: #f1d765;
-$ms-alert-warning-bg: #fbf6d9;
+$ms-alert-error: #c4314b;
+$ms-alert-error-bg: #ebd6db;
+$ms-alert-info: #8a8888;
+$ms-alert-info-bg: #c2c2c2;
+$ms-alert-success: #237b4b;
+$ms-alert-success-bg: #c0df9a;
+$ms-alert-warning: #f6ca06;
+$ms-alert-warning-bg: #fff6c4;
 // Deprecated MDL2 color variables.
 @import "./Color.Variables.MDL2";
 // Custom

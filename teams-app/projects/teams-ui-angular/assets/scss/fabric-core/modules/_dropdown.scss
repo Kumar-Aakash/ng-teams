@@ -44,7 +44,8 @@
             opacity: 1;
             &:hover {
                 cursor: pointer;
-                background: $ms-color-communicationPrimary 0% 0% no-repeat padding-box;
+                // background: $ms-color-communicationPrimary 0% 0% no-repeat padding-box;
+                background: $ms-color-gray30 0% 0% no-repeat padding-box;
                 @extend %theme-link-background-color;
                 border-radius: 3px 3px 0px 0px;
                 opacity: 1;
