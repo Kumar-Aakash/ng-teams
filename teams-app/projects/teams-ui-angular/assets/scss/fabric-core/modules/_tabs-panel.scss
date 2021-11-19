@@ -1,18 +1,57 @@
+$ms-tab-spacing: 0.4rem;
+$ms-tab-border-size: 2px;
+
 .ts-tabs-panel {
     @extend %theme-body-bg-background-color;
-    margin: 0.5rem;
+    margin: $ms-tab-spacing;
     .ts-tabs-list {
         display: flex;
+        padding-left: 0;
         list-style-type: none;
+        background-color: $ms-color-gray20;
+        border-bottom: $ms-tab-border-size solid $ms-color-gray40;
         .ts-tab-item {
+            position: relative;
             padding: 0.5rem;
-            background-color: $ms-color-gray40;
+            margin-bottom: calc(#{$ms-tab-spacing} - #{$ms-tab-border-size});
+            border-bottom: $ms-tab-border-size solid inherit;
             &:hover {
-                // background-color: $ms-color-gray40;
-                @extend %theme-link-background-color;
+                background-color: $ms-color-gray40;
             }
             &:active {
-                background-color: $ms-color-communicationPrimary;
+                background-color: $ms-color-gray60;
+            }
+            &:not(:first-child):after {
+                content: "";
+                height: 60%;
+                bottom: 20%;
+                left: 0;
+                position: absolute;
+                border-right: $ms-tab-border-size solid $ms-color-gray40;
+            }
+            &.active-tab {
+                background-color: $ms-color-gray40;
+                &::after {
+                    content: "";
+                    width: calc(100% + #{$ms-tab-border-size});
+                    left: 0;
+                    border-right: 0;
+                    position: absolute;
+                    bottom: -$ms-tab-spacing;
+                    border-bottom: $ms-tab-border-size solid $ms-color-communicationPrimary;
+                }
+                &::before {
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    right: -$ms-tab-border-size;
+                    bottom: 0;
+                    position: absolute;
+                    border: $ms-tab-border-size solid $ms-color-gray40;
+                }
+            }
+            &.tab-title {
+                font-weight: 600;
             }
         }
     }

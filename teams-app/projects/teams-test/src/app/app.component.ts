@@ -31,9 +31,11 @@ export class AppComponent {
   ];
   public tabsList = [
     { id: '#labGuide', title: 'Lab Guide' },
-    { id: '#vm', title: 'virtual Machine' },
+    { id: '#vm', title: 'Virtual Machine' },
     { id: '#envDetails', title: 'Environment Details' },
+    { id: '#resources', title: 'Resources' },
   ];
+  selectedTab: string = this.tabsList[0].id;
   selectedLanguage: any;
   isLoading: boolean = true;
   progressCompleted: number = 0;

@@ -1,6 +1,8 @@
 <teams-progress-bar [label]="label" [description]="alertMessage" [completed]="progressCompleted">
 </teams-progress-bar>
 
+<teams-tabs-panel [tabs]="tabsList" (currentTab)="onSelectTab($event)" [selectedTab]="selectedTab"></teams-tabs-panel>
+
 <teams-button title="Dynamic Text" (buttonClick)="test($event)" [disabled]="false   ">
 </teams-button>
 
@@ -22,5 +24,3 @@
 
 <teams-confirm-dialog *ngIf="showDialog" [message]="alertMessage" [intervalValue]="dialogInterval"
     (resultResponse)="dialogResponse($event)"> </teams-confirm-dialog>
-
-<teams-tabs-panel [tabs]="tabsList" (selectedTab)="onSelectTab($event)"></teams-tabs-panel>
